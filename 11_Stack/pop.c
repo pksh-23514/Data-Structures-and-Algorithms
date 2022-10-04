@@ -2,10 +2,10 @@
 Name         : Prabhat Kiran
 Date         : 03rd October 2022
 Description  : Pop the Top-most element on the Stack.
+Sample Input : Top -> 4 3 2 1
 Cases:
 1. Stack empty → Return STACK_EMPTY.
 2. Stack not empty → Pop (delete) the top of the data from the stack.
-Sample Input : Top -> 4 3 2 1
 Sample Output: Top -> 3 2 1
 */
 
