@@ -1,7 +1,7 @@
 /*
 Name         : Prabhat Kiran
 Date         : 03rd October 2022
-Description  : Stack basic operations Implementation.
+Description  : Stack basic operations Implementation using Arrays.
 Implement the functions given below :-
 1. push(stack, data)
 2. pop(stack)
