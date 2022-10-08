@@ -45,8 +45,8 @@ int sort (Slist **head)
 			}
 			else	//Otherwise, just update the Previous and Current node to point to one node ahead.
 			{
-				prev = ptr;
-				ptr = ptr->link;
+				prev = ptr;			//Update the 'prev' to point to the Current node.
+				ptr = ptr->link;		//Update the 'ptr' to point to the Next node.
 			}
 		}
 		/* At the end of each iteration of the inner loop, the largest element reaches the correct position. */
