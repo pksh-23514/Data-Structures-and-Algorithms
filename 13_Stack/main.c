@@ -1,7 +1,7 @@
 /*
 Name         : Prabhat Kiran
 Date         : 10th October 2022
-Description  : Convert Infix to Postfix and Evaluate Postfix expression
+Description  : Convert Infix to Postfix and Evaluate Postfix expression.
 */
 
 #include "main.h"

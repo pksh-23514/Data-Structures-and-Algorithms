@@ -26,7 +26,7 @@ int main()
 	while (1)
 	{
 		scanf("%d", &choice);	//Ask the user for the choice of Operation.
-		switch(choice)
+		switch (choice)
 		{
 			case 1:		/* To Push the element on the Stack */
 				{
