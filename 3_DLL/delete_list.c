@@ -11,7 +11,7 @@ Sample Output: head → NULL ← tail
 
 #include "dll.h"
 
-int dl_delete_list(Dlist **head, Dlist **tail)
+int dl_delete_list (Dlist **head, Dlist **tail)
 {
 	if (*head == NULL)			//If the LL is empty, the Delete operation cannot be performed.
 		return FAILURE;
