@@ -13,6 +13,7 @@ Sample Output: key element 3  is found at 3rd position
 #if 1
 data_t binarySearch_recursive (data_t *arr, data_t size, data_t key, data_t first, data_t last)
 {
+	/* In finding 'mid', Overflow condition can arise if we perform "((low + high) / 2)" as the sum value can become larger than INT_MAX. To avoid this, perform the below expression. */
 	data_t mid = first + (last - first) / 2;	//Initialize the 'middle' as Middle index for the given Array.
 
 	if (size == 1)			//If the size of the Array reaches '1', it signifies the search has ended and the Key is not present in the Array.
@@ -37,6 +38,7 @@ data_t binarySearch_recursive (data_t *arr, data_t size, data_t key, data_t firs
 #if 0
 data_t binarySearch_recursive (data_t *arr, data_t size, data_t key, data_t first, data_t last)
 {
+	/* In finding 'mid', Overflow condition can arise if we perform "((low + high) / 2)" as the sum value can become larger than INT_MAX. To avoid this, perform the below expression. */
 	data_t mid = first + (last - first) / 2;	//Initialize the 'middle' as Middle index for the given Array.
 
 	if (first > last)		//If the 'low' and 'high' get the same Index value, the search has ended and the Key is not present in the Array.

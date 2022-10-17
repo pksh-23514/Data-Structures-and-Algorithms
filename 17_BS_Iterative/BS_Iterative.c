@@ -19,6 +19,7 @@ data_t binarySearch_iterative (data_t *arr, data_t size, data_t key)
 	*/
 	while (low <= high)			//The loop shall run till we get the Key or the 'low' and 'high' get the same Index value.
 	{
+		/* In finding 'mid', Overflow condition can arise if we perform "((low + high) / 2)" as the sum value can become larger than INT_MAX. To avoid this, perform the below expression. */
 		mid = low + (high - low) / 2;	//Find the middle Index of the Array.
 
 		if (arr [mid] == key)		//If the Middle element is equal to the Key, return the middle Index.
