@@ -18,7 +18,7 @@ int main()
 	/* Declaring the Array with Size */
 	data_t arr [limit];
 	
-	/*Reading the Array elements */
+	/* Reading the Array elements */
 	printf("Enter the array elements\n");
 	for (i = 0; i < limit; i++)
 	{

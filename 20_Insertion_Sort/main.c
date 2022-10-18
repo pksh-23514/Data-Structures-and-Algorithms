@@ -15,19 +15,21 @@ int main()
 	printf("Enter the size of an array\n");
 	scanf("%d", &limit);
 	
-	/* Declaring the array with size */
+	/* Declaring the Array with Size */
 	data_t arr [limit];
 	
+	/* Reading the Array elements */
 	printf("Enter the array elements\n");
 	for (i = 0; i < limit; i++)
 	{
-		/* Scanning the array elements */
+		/* Scanning each Array element */
 		scanf("%d", &arr [i]);
 	}
 	
-	/* Calling the function to bubble sort */
+	/* Calling the function to perform Selection Sort on the Array */
 	insertion (arr, limit);
 	
+	/* Printing the Sorted Array */
 	printf("Sorted array is : ");
 	for (i = 0; i < limit; i++)
 	{
