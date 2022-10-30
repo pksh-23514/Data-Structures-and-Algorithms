@@ -1,29 +1,31 @@
 /*
 Name         : Prabhat Kiran
-Date         :
-Description  :
-Sample Input :
-Sample Output:
+Date         : 25th October 2022
+Description  : Delete a Node in the given Binary Search Tree.
+Sample Input : 25 40 45 50 65 70 80 85 and "25"
+Sample Output: 40 45 50 65 70 80 85
 */
 
 #include "tree.h"
 
 extern int status;
-/* Function to delete the node  */
+
+/* Function to Delete the Node in the given BST  */
+
 Tree_t * delete_BST(Tree_t * root, int data)
 {
-	Tree_t* temp = root;
-	Tree_t* parent = NULL;
+	Tree_t* temp = root;	//To store the Current node.
+	Tree_t* parent = NULL;	//To store the Parent of the Current node.
 
 	while (temp != NULL)	//The loop shall run to search the Node containing the given 'data' to be deleted.
 	{
 		if (temp->data == data)
 			break;
-		else if (temp->data > data)
+		parent = temp;				//Update the 'parent' to store the address of Current node.
+		if (temp->data > data)
 			temp = temp->left;		//Left Sub-tree search.
 		else
 			temp = temp->right;		//Right Sub-tree search.
-		parent = temp;				//Update the 'parent' to store the address of Current node.
 	}
 
 	if (temp == NULL)	//If the loop terminates normally, the given 'data' is not present in the Tree.
@@ -35,7 +37,7 @@ Tree_t * delete_BST(Tree_t * root, int data)
 	{
 		if ((temp->left == NULL) && (temp->right == NULL))	//If the data is found in a Leaf Node.
 		{
-			if (temp == root)		//If the Root is the only Node in the Tree, update it to NULL.
+			if (temp == root)	//If the Root is the only Node in the Tree, update it to NULL.
 			{
 				root = NULL;
 			}
@@ -44,18 +46,16 @@ Tree_t * delete_BST(Tree_t * root, int data)
 				if (parent->left == temp)	//If the node to be deleted is the Left Leaf Node of 'parent'; make the Left pointer of 'parent' as NULL.
 				{
 					parent->left = NULL;
-					printf ("Here1\n");
 				}
 				else	//If the node to be deleted is the Right Leaf Node of 'parent'; make the Right pointer of 'parent' as NULL.
 				{
 					parent->right = NULL;
-					printf ("Here2\n");
 				}
 			}
 
-			free (temp);	//Free the Current Node.
+			free (temp);		//Free the Current Node.
 			status = 1;		//Update the 'status' as 1; to signify the Node deletion.
-			return root;	//Return the 'root' to the updated Tree.
+			return root;		//Return the 'root' to the updated Tree.
 		}
 		else if ((temp->left == NULL) || (temp->right == NULL))		//If the data is found in the Node having either a Left or Right Child.
 		{
@@ -77,14 +77,16 @@ Tree_t * delete_BST(Tree_t * root, int data)
 				}
 			}
 
-			free (temp);	//Free the Current Node.
+			free (temp);		//Free the Current Node.
 			status = 1;		//Update the 'status' as 1; to signify the Node deletion.
-			return root;	//Return the 'root' to the updated Tree.
+			return root;		//Return the 'root' to the updated Tree.
 		}
 		else if ((temp->left != NULL) && (temp->right != NULL))		//If the data is found in the Node having both Left and Right Child.
 		{
 			Tree_t* prev = NULL;			//To store the Inorder Successor's Parent.
 			Tree_t* curr = temp->right;		//To store the Inorder Successor.
+
+			int data = findmin (curr);		//Getting the Value of the Inorder Successor.
 
 			while (curr->left != NULL)		//Computing the Inorder Successor for the Node to be deleted.
 			{
@@ -102,9 +104,9 @@ Tree_t * delete_BST(Tree_t * root, int data)
 			}
 
 			temp->data = curr->data;	//Update the Node to be deleted with value of the Inorder Successor.
-			free (curr);	//Free the Inorder Successor.
-			status = 1;		//Update the 'status' as 1; to signify the Node deletion.
-			return root;	//Return the 'root' to the updated Tree.
+			free (curr);			//Free the Inorder Successor.
+			status = 1;			//Update the 'status' as 1; to signify the Node deletion.
+			return root;			//Return the 'root' to the updated Tree.
 		}
 	}
 }
