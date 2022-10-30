@@ -34,6 +34,7 @@ int main()
 	{
 		printf("%d ", heap [i]);
 	}
+	printf ("\n");
 	
 	return 0;
 }
