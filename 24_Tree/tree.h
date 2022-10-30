@@ -20,12 +20,12 @@ typedef struct node
 } Tree_t;
 
 /* Function Declarations of all the Operations */
-int insert_into_BST (Tree_t **root, int data);
-int inorder (Tree_t *);
-int postorder (Tree_t *);
-int preorder (Tree_t *);
-int findmin (Tree_t * root);
-int findmax (Tree_t * root);
-int search_BST (Tree_t * root, int data);
+int insert_into_BST (Tree_t** root, int data);
+int inorder (Tree_t*);
+int postorder (Tree_t*);
+int preorder (Tree_t*);
+int findmin (Tree_t* root);
+int findmax (Tree_t* root);
+int search_BST (Tree_t* root, int data);
 
 #endif
